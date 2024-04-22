@@ -42,19 +42,26 @@
     	</div>		
 
 		<script >
+			document.addEventListener('DOMContentLoaded', function() {
+			    var audio = document.querySelector('audio');
+			    function playAudio() {
+			        if (audio && audio.paused) {
+			            audio.play()
+			            .then(function() {
+			                console.log('Audio is playing');
+			            })
+			            .catch(function(error) {
+			                console.error('Error playing audio:', error);
+			            });
+			        }
+			    }
+			    document.addEventListener('click', function() {
+			        playAudio();
+			    });
 
-		    document.addEventListener('DOMContentLoaded', function() {
-		        var audio = document.querySelector('audio');
-		        if (audio && audio.paused) {
-		            audio.play()
-		            .then(function() {
-		                console.log('Audio is playing');
-		            })
-		            .catch(function(error) {
-		                console.error('Error playing audio:', error);
-		            });
-		        }
-		    });
+			    playAudio();
+			});
+
 
 
 			var ok = 0;

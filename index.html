@@ -42,7 +42,21 @@
     	</div>		
 
 		<script >
-			
+
+		    document.addEventListener('DOMContentLoaded', function() {
+		        var audio = document.querySelector('audio');
+		        if (audio && audio.paused) {
+		            audio.play()
+		            .then(function() {
+		                console.log('Audio is playing');
+		            })
+		            .catch(function(error) {
+		                console.error('Error playing audio:', error);
+		            });
+		        }
+		    });
+
+
 			var ok = 0;
 			var flag = 1;
 			var myImage = document.getElementById("img");

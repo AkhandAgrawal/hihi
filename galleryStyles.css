@@ -60,6 +60,7 @@ canvas#starsCanvas {
     flex-wrap: wrap;
     justify-content: space-between;
     width: 55%; /* decrease width to 55% */
+    margin-top: 20px;
 }
 
 .left img {
